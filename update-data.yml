@@ -1,0 +1,38 @@
+name: Update Market Data
+
+on:
+  schedule:
+    # GitHub's minimum schedule granularity is 5 minutes. Runs roughly every 5 min,
+    # though GitHub may delay slightly during high load (not guaranteed to-the-second).
+    - cron: "*/5 * * * *"
+  workflow_dispatch: {}   # lets you click "Run workflow" manually in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run data fetcher
+        run: python3 scripts/fetch_data.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "market-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/latest.json data/history.json
+          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Update market data $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
