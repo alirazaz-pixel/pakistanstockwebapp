@@ -1,0 +1,10 @@
+{
+  "name": "Pakistan Market Hub",
+  "short_name": "PK Market",
+  "description": "Live KSE-100, inflation, oil and gold prices for Pakistan",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#070b14",
+  "icons": []
+}

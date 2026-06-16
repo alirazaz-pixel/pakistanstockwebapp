@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pakistan Market Hub</title>
+<meta name="description" content="Live KSE-100 index, inflation, oil and gold prices for Pakistan." />
+
+<!-- Mobile "Add to Home Screen" support -->
+<meta name="theme-color" content="#070b14" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="PK Market" />
+<link rel="manifest" href="manifest.json" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">&#9788;</div>
+    <div class="brand-text">
+      <div class="brand-title">Pakistan Market Hub</div>
+      <div class="brand-sub">PSX &middot; Economic Indicators &middot; Live Feed</div>
+    </div>
+  </div>
+
+  <div class="topbar-right">
+    <div class="kse-live">
+      <span class="kse-live-label">KSE-100</span>
+      <span id="kse-live-value" class="kse-live-value">&mdash;</span>
+    </div>
+    <span id="kse-live-badge" class="badge">&hellip;</span>
+    <div class="clock-block">
+      <span id="last-updated">Connecting&hellip;</span>
+      <span id="refresh-dot" class="refresh-dot" title="Auto-refreshing"></span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Dashboard sections">
+  <button class="tab active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
+  <button class="tab" data-tab="market" role="tab" aria-selected="false">Market</button>
+  <button class="tab" data-tab="macro" role="tab" aria-selected="false">Macro</button>
+  <button class="tab" data-tab="commodities" role="tab" aria-selected="false">Commodities</button>
+</nav>
+
+<main class="content">
+
+  <!-- ============ OVERVIEW ============ -->
+  <section id="panel-overview" class="panel active" role="tabpanel">
+
+    <div class="stat-grid">
+      <div class="stat-card" data-accent="#10b981">
+        <div class="stat-label">KSE-100 Index</div>
+        <div class="stat-value" id="stat-kse-value">&mdash;</div>
+        <div class="stat-sub">PSX Benchmark</div>
+        <div class="stat-change" id="stat-kse-change">&mdash;</div>
+      </div>
+
+      <div class="stat-card" data-accent="#f59e0b">
+        <div class="stat-label">Inflation (CPI YoY)</div>
+        <div class="stat-value" id="stat-cpi-value">&mdash;</div>
+        <div class="stat-sub" id="stat-cpi-sub">&mdash;</div>
+        <div class="stat-change" id="stat-cpi-change">&mdash;</div>
+      </div>
+
+      <div class="stat-card" data-accent="#0ea5e9">
+        <div class="stat-label">Petrol Price</div>
+        <div class="stat-value" id="stat-petrol-value">&mdash;</div>
+        <div class="stat-sub" id="stat-petrol-sub">per litre</div>
+        <div class="stat-change" id="stat-petrol-change">&mdash;</div>
+      </div>
+
+      <div class="stat-card" data-accent="#f59e0b">
+        <div class="stat-label">Gold (24K)</div>
+        <div class="stat-value" id="stat-gold-value">&mdash;</div>
+        <div class="stat-sub">per tola</div>
+        <div class="stat-change" id="stat-gold-change">&mdash;</div>
+      </div>
+
+      <div class="stat-card" data-accent="#8b5cf6">
+        <div class="stat-label">Brent Crude Oil</div>
+        <div class="stat-value" id="stat-oil-value">&mdash;</div>
+        <div class="stat-sub">USD / barrel</div>
+        <div class="stat-change" id="stat-oil-change">&mdash;</div>
+      </div>
+
+      <div class="stat-card" data-accent="#ec4899">
+        <div class="stat-label">USD / PKR</div>
+        <div class="stat-value" id="stat-usd-value">&mdash;</div>
+        <div class="stat-sub">Interbank approx.</div>
+      </div>
+    </div>
+
+    <div class="grid-2col">
+      <div class="card chart-card">
+        <div class="card-header">
+          <div class="section-title" data-accent="#10b981">KSE-100 Performance</div>
+          <div class="range-toggle" id="kse-range-toggle">
+            <button data-range="6M" class="range-btn">6M</button>
+            <button data-range="1Y" class="range-btn active">1Y</button>
+            <button data-range="ALL" class="range-btn">ALL</button>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart-kse-overview" height="200"></canvas>
+        </div>
+        <div class="chart-footnote" id="kse-footnote">&nbsp;</div>
+      </div>
+
+      <div class="card feed-card">
+        <div class="section-title" data-accent="#60a5fa">Market Feed</div>
+        <div class="feed-list" id="feed-list">
+          <div class="feed-empty">Generating feed&hellip;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARKET ============ -->
+  <section id="panel-market" class="panel" role="tabpanel" hidden>
+    <div class="section-title" data-accent="#10b981">KSE-100 Extended History</div>
+    <div class="card">
+      <div class="chart-wrap chart-wrap-tall">
+        <canvas id="chart-kse-extended" height="320"></canvas>
+      </div>
+    </div>
+
+    <div class="grid-2col" style="margin-top:20px">
+      <div class="card">
+        <div class="section-title" data-accent="#8b5cf6">Key Metrics</div>
+        <div class="kv-list" id="market-kv-list"></div>
+      </div>
+      <div class="card">
+        <div class="section-title" data-accent="#60a5fa">About This Data</div>
+        <p class="prose">
+          The KSE-100 level shown here is sourced from a public market-data aggregator
+          (Yahoo Finance, ticker <code>^KSE</code>), refreshed automatically every few minutes.
+          It is provided for personal, informational tracking only and is not an official
+          PSX feed. For licensed, official real-time PSX data, contact PSX's Market Data Team.
+        </p>
+        <p class="prose">
+          This app polls its local data file every 10 seconds so updates appear instantly
+          once new data lands &mdash; the underlying values themselves refresh roughly every
+          5 minutes via an automated job.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MACRO ============ -->
+  <section id="panel-macro" class="panel" role="tabpanel" hidden>
+    <div class="grid-2col">
+      <div class="card">
+        <div class="section-title" data-accent="#f59e0b">Inflation Snapshot</div>
+        <div class="mini-stat-grid" id="macro-mini-stats"></div>
+        <p class="prose" style="margin-top:16px">
+          CPI and core inflation are published monthly by the Pakistan Bureau of
+          Statistics (PBS) and updated here by hand when new releases land &mdash;
+          they don't change minute to minute like market prices.
+        </p>
+      </div>
+      <div class="card">
+        <div class="section-title" data-accent="#8b5cf6">Macro Snapshot</div>
+        <div class="kv-list" id="macro-kv-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMODITIES ============ -->
+  <section id="panel-commodities" class="panel" role="tabpanel" hidden>
+    <div class="grid-2col">
+      <div class="card">
+        <div class="card-header">
+          <div class="section-title" data-accent="#0ea5e9">Brent Crude (USD/barrel)</div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart-oil" height="200"></canvas>
+        </div>
+        <div class="mini-stat-grid" id="oil-mini-stats" style="margin-top:14px"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="section-title" data-accent="#f59e0b">Gold 24K (PKR/Tola)</div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart-gold" height="200"></canvas>
+        </div>
+        <div class="mini-stat-grid" id="gold-mini-stats" style="margin-top:14px"></div>
+      </div>
+    </div>
+
+    <div class="grid-2col" style="margin-top:20px">
+      <div class="card" style="border-color:#0ea5e94d">
+        <div class="section-title" data-accent="#0ea5e9">Petrol &amp; Diesel</div>
+        <div class="kv-list" id="fuel-kv-list"></div>
+      </div>
+      <div class="card" style="border-color:#f59e0b4d">
+        <div class="section-title" data-accent="#f59e0b">Exchange Rate</div>
+        <div class="kv-list" id="fx-kv-list"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  Data: Yahoo Finance (KSE-100, Brent, Gold), PBS, OGRA/PSO, SBP &middot;
+  Auto-refreshes every 10s &middot; Not official PSX data &middot; For personal use only
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
