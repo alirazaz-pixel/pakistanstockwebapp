@@ -1,51 +1,31 @@
 {
-  "fetched_at_utc": "2026-06-16T09:56:38+00:00",
-  "fetched_at_pkt": "2026-06-16T14:56:38+05:00",
+  "fetched_at_utc": "2026-06-16T00:00:00+00:00",
+  "fetched_at_pkt": "2026-06-16T05:00:00+05:00",
   "kse100": {
-    "price": 0.0,
-    "change": 0.0,
-    "change_pct": 0.0,
-    "prev_close": 0.0
+    "price": 177039.82,
+    "change": 1520.82,
+    "change_pct": 0.87,
+    "prev_close": 175519.0
   },
   "usd_pkr": 278.38,
   "gold": {
-    "pkr_per_tola_24k": 455370.0,
-    "pkr_per_gram_24k": 39041.0,
-    "usd_per_oz": 4362.1,
-    "change_pct": 6.64
+    "pkr_per_tola_24k": 455370,
+    "pkr_per_gram_24k": 37511,
+    "usd_per_oz": 3420.5,
+    "change_pct": 1.16
   },
   "oil_brent": {
     "price": 81.62,
-    "change": -8.76,
+    "change": -8.7,
     "change_pct": -9.69,
-    "prev_close": 90.38
+    "prev_close": 90.32
   },
   "manual": {
-    "_instructions": "Edit this file in GitHub whenever PBS/OGRA/SBP publish new numbers. The fetcher script merges this into every snapshot automatically. No need to touch any other file.",
-    "cpi": {
-      "yoy_percent": 11.7,
-      "month_label": "May 2026",
-      "source": "Pakistan Bureau of Statistics (PBS)",
-      "previous_month_yoy_percent": 7.3
-    },
-    "core_inflation": {
-      "yoy_percent": 7.1,
-      "month_label": "Feb 2026"
-    },
-    "petrol": {
-      "pkr_per_litre": 373.78,
-      "change_pkr": -4.0,
-      "effective_date": "2026-06-13",
-      "source": "OGRA / Ministry of Energy"
-    },
-    "diesel": {
-      "pkr_per_litre": 378.78,
-      "effective_date": "2026-06-13"
-    },
-    "policy_rate": {
-      "percent": 10.5,
-      "source": "State Bank of Pakistan (SBP)"
-    },
-    "last_manual_update": "2026-06-15"
-  }
+    "cpi": { "yoy_percent": 11.7, "month_label": "May 2026" },
+    "core_inflation": { "yoy_percent": 7.1, "month_label": "Feb 2026" },
+    "petrol": { "pkr_per_litre": 373.78, "change_pkr": -4.0, "effective_date": "2026-06-13" },
+    "diesel": { "pkr_per_litre": 378.78 },
+    "policy_rate": { "percent": 10.5 }
+  },
+  "_note": "Clean seed/placeholder data. Will be replaced automatically by the next GitHub Actions run."
 }
