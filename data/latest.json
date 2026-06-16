@@ -1,31 +1,46 @@
 {
-  "fetched_at_utc": "2026-06-16T00:00:00+00:00",
-  "fetched_at_pkt": "2026-06-16T05:00:00+05:00",
-  "kse100": {
-    "price": 177039.82,
-    "change": 1520.82,
-    "change_pct": 0.87,
-    "prev_close": 175519.0
-  },
+  "fetched_at_utc": "2026-06-16T10:22:29+00:00",
+  "fetched_at_pkt": "2026-06-16T15:22:29+05:00",
+  "kse100": null,
   "usd_pkr": 278.38,
   "gold": {
-    "pkr_per_tola_24k": 455370,
-    "pkr_per_gram_24k": 37511,
-    "usd_per_oz": 3420.5,
-    "change_pct": 1.16
+    "pkr_per_tola_24k": 455923.0,
+    "pkr_per_gram_24k": 39089.0,
+    "usd_per_oz": 4367.4,
+    "change_pct": 6.77
   },
   "oil_brent": {
-    "price": 81.62,
-    "change": -8.7,
-    "change_pct": -9.69,
-    "prev_close": 90.32
+    "price": 81.27,
+    "change": -9.11,
+    "change_pct": -10.08,
+    "prev_close": 90.38
   },
   "manual": {
-    "cpi": { "yoy_percent": 11.7, "month_label": "May 2026" },
-    "core_inflation": { "yoy_percent": 7.1, "month_label": "Feb 2026" },
-    "petrol": { "pkr_per_litre": 373.78, "change_pkr": -4.0, "effective_date": "2026-06-13" },
-    "diesel": { "pkr_per_litre": 378.78 },
-    "policy_rate": { "percent": 10.5 }
-  },
-  "_note": "Clean seed/placeholder data. Will be replaced automatically by the next GitHub Actions run."
+    "_instructions": "Edit this file in GitHub whenever PBS/OGRA/SBP publish new numbers. The fetcher script merges this into every snapshot automatically. No need to touch any other file.",
+    "cpi": {
+      "yoy_percent": 11.7,
+      "month_label": "May 2026",
+      "source": "Pakistan Bureau of Statistics (PBS)",
+      "previous_month_yoy_percent": 7.3
+    },
+    "core_inflation": {
+      "yoy_percent": 7.1,
+      "month_label": "Feb 2026"
+    },
+    "petrol": {
+      "pkr_per_litre": 373.78,
+      "change_pkr": -4.0,
+      "effective_date": "2026-06-13",
+      "source": "OGRA / Ministry of Energy"
+    },
+    "diesel": {
+      "pkr_per_litre": 378.78,
+      "effective_date": "2026-06-13"
+    },
+    "policy_rate": {
+      "percent": 10.5,
+      "source": "State Bank of Pakistan (SBP)"
+    },
+    "last_manual_update": "2026-06-15"
+  }
 }
