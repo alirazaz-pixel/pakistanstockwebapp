@@ -60,7 +60,8 @@ def get_yahoo_quote(ticker):
         meta = result["meta"]
         price = meta.get("regularMarketPrice")
         prev_close = meta.get("previousClose") or meta.get("chartPreviousClose")
-        if price is None or prev_close is None:
+        if price is None or prev_close is None or price <= 0 or prev_close <= 0:
+            print(f"[warn] {ticker}: got invalid price data (price={price}, prev_close={prev_close})", file=sys.stderr)
             return None
         change = price - prev_close
         change_pct = (change / prev_close * 100) if prev_close else 0
