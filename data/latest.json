@@ -1,1 +1,31 @@
-
+{
+  "fetched_at_utc": "2026-06-16T00:00:00+00:00",
+  "fetched_at_pkt": "2026-06-16T05:00:00+05:00",
+  "kse100": {
+    "price": 177039.82,
+    "change": 1520.82,
+    "change_pct": 0.87,
+    "prev_close": 175519.0
+  },
+  "usd_pkr": 282.4,
+  "gold": {
+    "pkr_per_tola_24k": 455300,
+    "pkr_per_gram_24k": 37509,
+    "usd_per_oz": 3420.5,
+    "change_pct": 1.16
+  },
+  "oil_brent": {
+    "price": 67.2,
+    "change": -0.8,
+    "change_pct": -1.18,
+    "prev_close": 68.0
+  },
+  "manual": {
+    "cpi": { "yoy_percent": 11.7, "month_label": "May 2026" },
+    "core_inflation": { "yoy_percent": 7.1, "month_label": "Feb 2026" },
+    "petrol": { "pkr_per_litre": 373.78, "change_pkr": -4.0, "effective_date": "2026-06-13" },
+    "diesel": { "pkr_per_litre": 378.78 },
+    "policy_rate": { "percent": 10.5 }
+  },
+  "_note": "Seed/placeholder data. Will be replaced automatically by the first GitHub Actions run."
+}
