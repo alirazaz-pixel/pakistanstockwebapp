@@ -1,1 +1,28 @@
-
+{
+  "_instructions": "Edit this file in GitHub whenever PBS/OGRA/SBP publish new numbers. The fetcher script merges this into every snapshot automatically. No need to touch any other file.",
+  "cpi": {
+    "yoy_percent": 11.7,
+    "month_label": "May 2026",
+    "source": "Pakistan Bureau of Statistics (PBS)",
+    "previous_month_yoy_percent": 7.3
+  },
+  "core_inflation": {
+    "yoy_percent": 7.1,
+    "month_label": "Feb 2026"
+  },
+  "petrol": {
+    "pkr_per_litre": 373.78,
+    "change_pkr": -4.00,
+    "effective_date": "2026-06-13",
+    "source": "OGRA / Ministry of Energy"
+  },
+  "diesel": {
+    "pkr_per_litre": 378.78,
+    "effective_date": "2026-06-13"
+  },
+  "policy_rate": {
+    "percent": 10.5,
+    "source": "State Bank of Pakistan (SBP)"
+  },
+  "last_manual_update": "2026-06-15"
+}
