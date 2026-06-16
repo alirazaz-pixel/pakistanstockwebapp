@@ -216,6 +216,8 @@ code {
 .chart-wrap { width: 100%; position: relative; height: 200px; }
 .chart-wrap-tall { height: 320px; }
 .chart-footnote { font-size: 11px; color: var(--text-faint); margin-top: 8px; }
+.chart-footnote a { color: var(--blue); text-decoration: none; }
+.chart-footnote a:hover { text-decoration: underline; }
 
 .range-toggle { display: flex; gap: 6px; }
 .range-btn {
@@ -293,6 +295,15 @@ code {
   display: none;
 }
 .toast.show { display: block; }
+
+/* ---------- Embedded third-party widget ---------- */
+.te-widget-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff; /* TE widget renders on white background */
+  border: 1px solid var(--border);
+}
+.te-widget-wrap iframe { display: block; border: none; }
 
 @media (max-width: 480px) {
   .stat-value { font-size: 19px; }
