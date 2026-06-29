@@ -1,18 +1,18 @@
 {
-  "fetched_at_utc": "2026-06-29T17:33:13+00:00",
-  "fetched_at_pkt": "2026-06-29T22:33:13+05:00",
+  "fetched_at_utc": "2026-06-29T19:23:10+00:00",
+  "fetched_at_pkt": "2026-06-30T00:23:10+05:00",
   "kse100": null,
   "usd_pkr": 278.01,
   "gold": {
-    "pkr_per_tola_24k": 421477.0,
-    "pkr_per_gram_24k": 36135.0,
-    "usd_per_oz": 4042.8,
-    "change_pct": 1.32
+    "pkr_per_tola_24k": 419517.0,
+    "pkr_per_gram_24k": 35967.0,
+    "usd_per_oz": 4024.0,
+    "change_pct": 0.84
   },
   "oil_brent": {
-    "price": 74.18,
-    "change": 0.44,
-    "change_pct": 0.6,
+    "price": 73.73,
+    "change": -0.01,
+    "change_pct": -0.01,
     "prev_close": 73.74
   },
   "manual": {
