@@ -1,6 +1,6 @@
 {
-  "fetched_at_utc": "2026-08-17T05:53:00+00:00",
-  "fetched_at_pkt": "2026-08-17T10:53:00+05:00",
+  "fetched_at_utc": "2026-08-17T06:24:06+00:00",
+  "fetched_at_pkt": "2026-08-17T11:24:06+05:00",
   "kse100": null,
   "usd_pkr": 277.65,
   "gold": {
@@ -10,9 +10,9 @@
     "change_pct": 0.99
   },
   "oil_brent": {
-    "price": 88.58,
-    "change": -0.4,
-    "change_pct": -0.45,
+    "price": 88.43,
+    "change": -0.55,
+    "change_pct": -0.62,
     "prev_close": 88.98
   },
   "manual": {
