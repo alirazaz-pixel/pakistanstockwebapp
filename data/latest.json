@@ -1,19 +1,19 @@
 {
-  "fetched_at_utc": "2026-09-28T00:54:56+00:00",
-  "fetched_at_pkt": "2026-09-28T05:54:56+05:00",
+  "fetched_at_utc": "2026-09-28T06:05:05+00:00",
+  "fetched_at_pkt": "2026-09-28T11:05:05+05:00",
   "kse100": null,
   "usd_pkr": 276.91,
   "gold": {
-    "pkr_per_tola_24k": 443506.0,
-    "pkr_per_gram_24k": 38024.0,
-    "usd_per_oz": 4271.0,
-    "change_pct": -2.41
+    "pkr_per_tola_24k": 437784.0,
+    "pkr_per_gram_24k": 37534.0,
+    "usd_per_oz": 4215.9,
+    "change_pct": -2.37
   },
   "oil_brent": {
-    "price": 98.26,
-    "change": -0.99,
-    "change_pct": -1.0,
-    "prev_close": 99.25
+    "price": 99.16,
+    "change": -3.92,
+    "change_pct": -3.8,
+    "prev_close": 103.08
   },
   "manual": {
     "_instructions": "Edit this file in GitHub whenever PBS/OGRA/SBP publish new numbers. The fetcher script merges this into every snapshot automatically. No need to touch any other file.",
