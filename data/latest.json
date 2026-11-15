@@ -1,11 +1,11 @@
 {
-  "fetched_at_utc": "2026-11-14T23:17:59+00:00",
-  "fetched_at_pkt": "2026-11-15T04:17:59+05:00",
+  "fetched_at_utc": "2026-11-15T02:45:53+00:00",
+  "fetched_at_pkt": "2026-11-15T07:45:53+05:00",
   "kse100": null,
-  "usd_pkr": 276.6,
+  "usd_pkr": 276.66,
   "gold": {
-    "pkr_per_tola_24k": 403106.0,
-    "pkr_per_gram_24k": 34560.0,
+    "pkr_per_tola_24k": 403193.0,
+    "pkr_per_gram_24k": 34568.0,
     "usd_per_oz": 3886.3,
     "change_pct": -5.55
   },
